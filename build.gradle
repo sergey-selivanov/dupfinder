@@ -1,3 +1,12 @@
+/*
+
+    To make release and increase version:
+        gradle -Preckon.stage=final -Preckon.scope=patch reckonTagPush
+        gradle -Preckon.stage=final -Preckon.scope=minor reckonTagPush
+        gradle -Preckon.stage=final -Preckon.scope=major reckonTagPush
+
+*/
+
 plugins {
     id 'application'
     id 'eclipse'
