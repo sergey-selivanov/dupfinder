@@ -22,10 +22,10 @@ import javafx.util.Duration;
  * Example of displaying a splash page for a standalone JavaFX application
  */
 public class FadeApp extends Application {
-    public static final String APPLICATION_ICON =
-            "http://cdn1.iconfinder.com/data/icons/Copenhagen/PNG/32/people.png";
-    public static final String SPLASH_IMAGE =
-            "http://fxexperience.com/wp-content/uploads/2010/06/logo.png";
+//    public static final String APPLICATION_ICON =
+//            "http://cdn1.iconfinder.com/data/icons/Copenhagen/PNG/32/people.png";
+//    public static final String SPLASH_IMAGE =
+//            "http://fxexperience.com/wp-content/uploads/2010/06/logo.png"; // 656 x 207
 
     private Pane splashLayout;
     private ProgressBar loadProgress;
@@ -41,7 +41,8 @@ public class FadeApp extends Application {
     @Override
     public void init() {
         ImageView splash = new ImageView(new Image(
-                SPLASH_IMAGE
+                //SPLASH_IMAGE
+                getClass().getResourceAsStream("/images/logo.png")
         ));
         loadProgress = new ProgressBar();
         loadProgress.setPrefWidth(SPLASH_WIDTH - 20);
@@ -106,7 +107,8 @@ public class FadeApp extends Application {
         mainStage = new Stage(StageStyle.DECORATED);
         mainStage.setTitle("My Friends");
         mainStage.getIcons().add(new Image(
-                APPLICATION_ICON
+                //APPLICATION_ICON
+                getClass().getResourceAsStream("/images/amor.png")
         ));
 
         final ListView<String> peopleView = new ListView<>();
