@@ -10,7 +10,7 @@
 plugins {
     id 'application'
     id 'eclipse'
-    id 'org.openjfx.javafxplugin' version '0.0.9'
+//    id 'org.openjfx.javafxplugin' version '0.0.9'
     id 'org.beryx.jlink' version '2.23.3'
 
 //    id 'net.saliman.properties' version '1.5.1'
@@ -19,7 +19,7 @@ plugins {
 }
 
 repositories {
-    jcenter()
+    mavenCentral()
 }
 
 if(!project.hasProperty('reckon.scope')){
@@ -31,13 +31,16 @@ reckon {
     stageFromProp('dev', 'final')
 }
 
-
+/*
 javafx {
     version = '16-ea+6'
     modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
-
-mainClassName = "$moduleName/org.openjfx.MainApp"
+*/
+application.mainModule = 'hellofx'
+//mainClassName = "$moduleName/org.openjfx.MainApp"
+mainClassName = "org.openjfx.MainApp"
+//mainClassName = "hellofx/org.openjfx.MainApp"
 
 /*
 // from openjfx samples
